@@ -25,7 +25,7 @@ const AirtimePage = () => {
           Airtime Packages
         </h1>
       </div>
-      <h3 className="text-3xl font-medium text-black text-center mt-500 mb-4">
+      <h3 className="text-3xl font-normal text-black text-center mt-500 mb-4">
         Select a package to buy
       </h3>
       <RadioGroup value={selectedProduct} onChange={setSelectedProduct}>
