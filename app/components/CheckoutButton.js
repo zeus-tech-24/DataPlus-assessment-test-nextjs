@@ -24,7 +24,7 @@ const CheckoutButton = ({ product, quantity }) => {
     <>
       <button
         onClick={handleCheckout}
-        className="text-2xl text-white font-medium uppercase mb-8 px-5 py-4 rounded-md bg-sky-500 hover:bg-sky-800 mt-4 w-96 lg:w-96"
+        className="text-2xl text-white font-medium uppercase mb-8 px-5 py-4 rounded-md bg-bg-sky-700 hover:bg-sky-800 mt-4 w-96 lg:w-96"
       >
         Checkout
       </button>

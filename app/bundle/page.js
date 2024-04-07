@@ -42,7 +42,7 @@ const BundlePage = () => {
                 }
                 ${
                   checked
-                    ? "bg-sky-900 bg-opacity-75 text-slate-900"
+                    ? "bg-sky-700 bg-opacity-75 text-slate-900"
                     : "bg-white"
                 } 
                 cursor-pointer rounded-lg shadow-md focus:outline-none
