@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="bg-yellow-500 flex flex-col items-center justify-center min-h-screen antialiased px-4">
       <div className="border-b-2 border-t-2 shadow-2xl rounded-lg mb-6">
-        <h1 className="text-slate-100 sm:text-3xl lg:text-4xl font-bold py-4 mb-4 h-12 px-4 text-center">
+        <h1 className="text-slate-100 sm:text-3xl lg:text-4xl headfont font-bold py-4 mb-4 h-12 px-4 text-center">
           JOE'S AIRTIME & DATA BUNDLE MINI-SHOP
         </h1>
       </div>
