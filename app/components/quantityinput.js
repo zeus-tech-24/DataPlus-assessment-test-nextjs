@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-// QuantityInput.js
+// QuantityInput.jsx
 const QuantityInput = ({ onChange }) => {
   const [quantity, setQuantity] = useState(1); // Initialize quantity state with default value of 1
 
   const handleChange = (event) => {
     const value = parseInt(event.target.value); // Parse input value as integer
     setQuantity(value);
-    onChange(value); // Call the onChange prop with the new quantity value
   };
+
+  // Call the onChange prop with the new quantity value whenever quantity changes
+  useEffect(() => {
+    onChange(quantity);
+  }, [quantity, onChange]);
 
   return (
     <input
