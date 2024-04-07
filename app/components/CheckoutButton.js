@@ -3,6 +3,8 @@ import { Dialog, Transition } from "@headlessui/react";
 
 const CheckoutButton = ({ product, quantity }) => {
   const [isOpen, setIsOpen] = useState(false);
+  // Initialize quantity state with default value of 1
+  const [currentQuantity, setQuantity] = useState(1);
 
   const handleCheckout = () => {
     setIsOpen(true);
@@ -12,15 +14,13 @@ const CheckoutButton = ({ product, quantity }) => {
     setIsOpen(false);
   };
 
-  
+  // Parse the price string to extract the numeric value
   const parsePrice = (priceString) => {
-    
     return parseFloat(priceString.replace(/[^\d.]/g, ''));
   };
 
-  
-  const totalAmount = product && quantity && !isNaN(parsePrice(product.price))
-    ? (quantity * parsePrice(product.price)).toFixed(2)
+  const totalAmount = product && currentQuantity && !isNaN(parsePrice(product.price))
+    ? (currentQuantity * parsePrice(product.price)).toFixed(2)
     : 0;
 
   return (
@@ -60,7 +60,7 @@ const CheckoutButton = ({ product, quantity }) => {
                 <div className="mt-4">
                   {product ? (
                     <p className="text-lg text-gray-700">
-                      You have selected {quantity} of {product.product} for GHS {totalAmount}.
+                      You have purchased {currentQuantity} of {product.product} for GHS {totalAmount}.
                     </p>
                   ) : (
                     <p className="text-lg text-gray-700">
