@@ -13,7 +13,7 @@ const CheckoutButton = ({ product, quantity }) => {
   };
 
   // Calculate total amount by multiplying quantity with product price
-  const totalAmount = product ? quantity * product.price : 0;
+  const totalAmount = product ? (quantity * product.price).toFixed(2) : 0;
 
   return (
     <>
@@ -52,7 +52,7 @@ const CheckoutButton = ({ product, quantity }) => {
                 <div className="mt-4">
                   {product ? (
                     <p className="text-lg text-gray-700">
-                      You have selected {quantity} of {product.product} for ${totalAmount}.
+                      You have selected {quantity} of {product.product} for GHS {totalAmount}.
                     </p>
                   ) : (
                     <p className="text-lg text-gray-700">
