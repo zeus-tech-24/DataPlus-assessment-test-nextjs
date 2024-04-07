@@ -12,8 +12,8 @@ const CheckoutButton = ({ product, quantity }) => {
     setIsOpen(false);
   };
 
-  // Calculate total amount by multiplying quantity with product price
-  const totalAmount = product ? (quantity * product.price).toFixed(2) : 0;
+  // Check if both product and quantity are valid before calculating total amount
+  const totalAmount = product && quantity && !isNaN(product.price) ? (quantity * product.price).toFixed(2) : 0;
 
   return (
     <>
