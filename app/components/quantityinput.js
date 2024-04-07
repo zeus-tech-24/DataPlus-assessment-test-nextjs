@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-// QuantityInput.jsx
-const QuantityInput = ({ onChange }) => {
-  const [quantity, setQuantity] = useState(1); // Initialize quantity state with default value of 1
+const QuantityInput = ({ onChange, defaultValue }) => {
+  const [quantity, setQuantity] = useState(defaultValue || 1); // Initialize quantity state with default value provided by parent
 
   const handleChange = (event) => {
     const value = parseInt(event.target.value); // Parse input value as integer
@@ -24,5 +23,4 @@ const QuantityInput = ({ onChange }) => {
     />
   );
 };
-
 export default QuantityInput;
