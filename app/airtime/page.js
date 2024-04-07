@@ -47,7 +47,7 @@ const AirtimePage = () => {
                 } 
                 cursor-pointer rounded-lg shadow-md focus:outline-none
                 // Apply width style to control the width of each item
-                w-80 lg:w-96
+                w-96 lg:w-96
               `}
             >
               {({ active, checked }) => (

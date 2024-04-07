@@ -12,6 +12,9 @@ const CheckoutButton = ({ product, quantity }) => {
     setIsOpen(false);
   };
 
+  // Calculate total amount by multiplying quantity with product price
+  const totalAmount = product ? quantity * product.price : 0;
+
   return (
     <>
       <button
@@ -49,8 +52,7 @@ const CheckoutButton = ({ product, quantity }) => {
                 <div className="mt-4">
                   {product ? (
                     <p className="text-lg text-gray-700">
-                      You have selected {quantity} of {product.product} for{" "}
-                      {product.price}.
+                      You have selected {quantity} of {product.product} for ${totalAmount}.
                     </p>
                   ) : (
                     <p className="text-lg text-gray-700">
