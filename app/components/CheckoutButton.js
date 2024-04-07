@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 
 const CheckoutButton = ({ product, quantity }) => {
@@ -12,8 +12,16 @@ const CheckoutButton = ({ product, quantity }) => {
     setIsOpen(false);
   };
 
-  // Ensure product and quantity are valid before calculating total amount
-  const totalAmount = product && quantity && !isNaN(product.price) ? (quantity * product.price).toFixed(2) : 0;
+  
+  const parsePrice = (priceString) => {
+    
+    return parseFloat(priceString.replace(/[^\d.]/g, ''));
+  };
+
+  
+  const totalAmount = product && quantity && !isNaN(parsePrice(product.price))
+    ? (quantity * parsePrice(product.price)).toFixed(2)
+    : 0;
 
   return (
     <>
@@ -24,7 +32,7 @@ const CheckoutButton = ({ product, quantity }) => {
         Checkout
       </button>
 
-      <Transition appear show={isOpen} as={Fragment}>
+      <Transition appear show={isOpen} as={React.Fragment}>
         <Dialog
           as="div"
           className="fixed inset-0 z-10 overflow-y-auto"
@@ -34,7 +42,7 @@ const CheckoutButton = ({ product, quantity }) => {
             <Dialog.Overlay className="fixed inset-0 bg-black opacity-30" />
 
             <Transition.Child
-              as={Fragment}
+              as={React.Fragment}
               enter="ease-out duration-300"
               enterFrom="opacity-0 scale-95"
               enterTo="opacity-100 scale-100"
