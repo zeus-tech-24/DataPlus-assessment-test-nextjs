@@ -19,7 +19,7 @@ const QuantityInput = ({ onChange, defaultValue }) => {
       value={quantity}
       onChange={handleChange}
       placeholder="Enter quantity..."
-      className="w-80 lg:w-96 p-2 border border-gray-300 rounded-lg m-4"
+      className="w-96 lg:w-96 p-2 border border-gray-300 rounded-lg m-4"
     />
   );
 };
