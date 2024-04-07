@@ -20,7 +20,7 @@ const BundlePage = () => {
 
   return (
     <div className="bg-yellow-500 flex items-center flex-col max-w-full container min-h-screen antialiased m-auto">
-      <div className="container sm:w-96 lg:w-6/12 justify-center items-center shadow-2xl rounded-lg m-6 h-16 flex">
+      <div className="container sm:w-96 lg:w-6/12 justify-center items-center border-b-2  border-t-2 shadow-2xl rounded-lg m-6 h-16 flex">
         <h1 className="text-5xl uppercase text-center items-center justify-center text-black">
           Data Bundles
         </h1>
